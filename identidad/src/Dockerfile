@@ -42,7 +42,7 @@ RUN dotnet restore "BFF.Identidad.API/BFF.Identidad.API.csproj"
 #COPIAR FUENTES Y COMPILAR
 #================================
 
-COPY ./references /src/references/.
+#COPY ./references /src/references/.
 
 COPY ./BFF.Identidad.Dominio/ /src/BFF.Identidad.Dominio/.
 WORKDIR "/src/BFF.Identidad.Dominio"
