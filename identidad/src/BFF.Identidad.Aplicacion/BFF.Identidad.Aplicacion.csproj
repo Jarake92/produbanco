@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;UAT;PROD;RC</Configurations>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UAT|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PROD|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RC|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Comandos\**" />
+    <Compile Remove="Consultas\**" />
+    <EmbeddedResource Remove="Comandos\**" />
+    <EmbeddedResource Remove="Consultas\**" />
+    <None Remove="Comandos\**" />
+    <None Remove="Consultas\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFF.Identidad.Dominio\BFF.Identidad.Dominio.csproj" />
+    <ProjectReference Include="..\BFF.Identidad.Infraestructura\BFF.Identidad.Infraestructura.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <!-- Specify the package version you want to use. -->
+    <MicrosoftDataSqlClientVersion>5.1.3</MicrosoftDataSqlClientVersion>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <!-- Add the PackageReference to your project. -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="$(MicrosoftDataSqlClientVersion)" />
+  </ItemGroup>
+</Project>  

@@ -1,0 +1,78 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orquestador-api
+spec:
+  selector: # Define the wrapping strategy
+    matchLabels: # Match all pods with the defined labels
+      app: orquestador-api # Labels follow the `name: value` template
+  template: # This is the template of the pod inside the deployment
+    metadata:
+      labels:
+        app: orquestador-api
+    spec:
+      volumes:
+        - name: secrets-store-inline
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "xxxx-xxx"
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+        - image: azdevacrakspoc.azurecr.io/demo-orquestador:v8
+          name: orquestador-api
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: secrets-store-inline
+              mountPath: "/mnt/secrets-store"
+              readOnly: true
+          env:
+            - name: AUTHORITY
+              valueFrom:
+                secretKeyRef:
+                  name: authority
+                  key: password
+            - name: AUDIENCE
+              valueFrom:
+                secretKeyRef:
+                  name: audience
+                  key: password
+            - name: ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: encryptionkey
+                  key: password
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 7101
+              name: http
+          livenessProbe: #check the health endpoint of the app
+            httpGet:
+              path: /healthz #the path of the health endpoint
+              port: 7101 #the port of the container
+            initialDelaySeconds: 90 #wait 30 seconds before the first check
+            periodSeconds: 10 #check every 10 seconds
+            timeoutSeconds: 20 #wait 5 seconds for the health check to respond
+            failureThreshold: 3 #consider unhealthy after 3 failed attempts
+          readinessProbe: #check if the application is ready to receive traffic
+            httpGet:
+              path: /healthz #the path of the health endpoint
+              port: 7101 #the port of the container
+            initialDelaySeconds: 60 #wait 30 seconds before the first check
+            periodSeconds: 10 #check every 10 seconds
+            timeoutSeconds: 5 #wait 5 seconds for the health check to respond
+            failureThreshold: 3 #consider unhealthy after 3 failed attempts
+
+      hostAliases:
+        - ip: 10.0.0.119
+          hostnames:
+            - identidad.arquitectura.com

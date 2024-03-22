@@ -1,0 +1,30 @@
+{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.Console",
+      "Serilog.Sinks.ApplicationInsights"
+    ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Debug",
+        "System": "Debug"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console"
+      },
+      {
+        "Name": "ApplicationInsights",
+        "Args": {
+          "connectionString": "InstrumentationKey=05b3ba20-7906-43a6-abd9-f74e00945dbd;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/",
+          "telemetryConverter": "Serilog.Sinks.ApplicationInsights.TelemetryConverters.TraceTelemetryConverter, Serilog.Sinks.ApplicationInsights"
+        }
+      }
+    ],
+    "Enrich": [
+      "FromLogContext"
+    ]
+  }
+}

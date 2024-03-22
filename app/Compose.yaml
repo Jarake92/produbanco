@@ -1,0 +1,104 @@
+version: '3'
+services:
+  cliente:
+    image: azdevacrakspoc.azurecr.io/demo-cliente:v8
+    environment:
+      - AUTHORITY=https://iam.arquitectura.com:4431
+      - AUDIENCE=api
+      - ENCRYPTIONKEY=Sj/N7WndCnFm8nq[UBArc6_L}yHcVD3b
+    ports:
+      - "7201:7201"
+      - "7200:7200"
+    extra_hosts:
+      - "orquestador.arquitectura.com:172.20.0.2"
+      - "iam.arquitectura.com:172.20.0.3"
+      - "cliente.arquitectura.com:172.20.0.4"
+      - "direccion.arquitectura.com:172.20.0.5"
+      - "telefono.arquitectura.com:172.20.0.6"
+    networks:
+      aks:
+        ipv4_address: 172.20.0.4
+  
+  direccion:
+    image: azdevacrakspoc.azurecr.io/demo-direccion:v8
+    environment:
+      - AUTHORITY=https://iam.arquitectura.com:4431
+      - AUDIENCE=api
+      - ENCRYPTIONKEY=Sj/N7WndCnFm8nq[UBArc6_L}yHcVD3b
+    ports:
+      - "7301:7301"
+      - "7300:7300"
+    extra_hosts:
+      - "orquestador.arquitectura.com:172.20.0.2"
+      - "iam.arquitectura.com:172.20.0.3"
+      - "cliente.arquitectura.com:172.20.0.4"
+      - "direccion.arquitectura.com:172.20.0.5"
+      - "telefono.arquitectura.com:172.20.0.6"
+    networks:
+      aks:
+        ipv4_address: 172.20.0.5
+
+  telefono:
+    image: azdevacrakspoc.azurecr.io/demo-telefono:v8
+    environment:
+      - AUTHORITY=https://iam.arquitectura.com:4431
+      - AUDIENCE=api
+      - ENCRYPTIONKEY=Sj/N7WndCnFm8nq[UBArc6_L}yHcVD3b
+    ports:
+      - "7401:7401"
+      - "7400:7400"
+    extra_hosts:
+      - "orquestador.arquitectura.com:172.20.0.2"
+      - "iam.arquitectura.com:172.20.0.3"
+      - "cliente.arquitectura.com:172.20.0.4"
+      - "direccion.arquitectura.com:172.20.0.5"
+      - "telefono.arquitectura.com:172.20.0.6"
+    networks:
+      aks:
+        ipv4_address: 172.20.0.6
+
+  orquestador:
+    image: azdevacrakspoc.azurecr.io/demo-orquestador:v8
+    environment:
+      - AUTHORITY=https://iam.arquitectura.com:4431
+      - AUDIENCE=api
+      - ENCRYPTIONKEY=Sj/N7WndCnFm8nq[UBArc6_L}yHcVD3b
+    ports:
+      - "7101:7101"
+      - "7100:7100"
+    extra_hosts:
+      - "orquestador.arquitectura.com:172.20.0.2"
+      - "iam.arquitectura.com:172.20.0.3"
+      - "cliente.arquitectura.com:172.20.0.4"
+      - "direccion.arquitectura.com:172.20.0.5"
+      - "telefono.arquitectura.com:172.20.0.6"
+    networks:
+      aks:
+        ipv4_address: 172.20.0.2
+  
+
+  identidad:
+    image: azdevacrakspoc.azurecr.io/demo-identidad:v8
+    cap_add:
+          - NET_ADMIN
+          - NET_RAW
+    ports:
+      - "4431:4431"
+    extra_hosts:
+      - "orquestador.arquitectura.com:172.20.0.2"
+      - "iam.arquitectura.com:172.20.0.3"
+      - "cliente.arquitectura.com:172.20.0.4"
+      - "direccion.arquitectura.com:172.20.0.5"
+      - "telefono.arquitectura.com:172.20.0.6"
+    networks:
+      aks:
+        ipv4_address: 172.20.0.3
+        
+
+networks:
+  aks:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/28
+
+

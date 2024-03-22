@@ -1,0 +1,55 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aplicacion-ingress
+  annotations:
+   nginx.ingress.kubernetes.io/ssl-redirect: "false"
+   nginx.ingress.kubernetes.io/use-regex: "true"
+   nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /telefono(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: telefono-api-svc
+            port:
+              number: 8081
+      - path: /direccion(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: direccion-api-svc
+            port:
+              number: 8081
+      - path: /orquestador(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: orquestador-api-svc
+            port:
+              number: 8081
+      - path: /cliente(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: cliente-api-svc
+            port:
+              number: 8081
+      - path: /identidad(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: identidad-api-svc 
+            port:
+              number: 4431
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: identidad-api-svc 
+            port:
+              number: 4431

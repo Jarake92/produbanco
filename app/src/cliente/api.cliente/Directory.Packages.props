@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <!-- Specify the package version you want to use. -->
+    <AzureIdentityVersion>1.10.2</AzureIdentityVersion>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <!-- Add the PackageReference to your project. -->
+    <PackageReference Include="Azure.Identity" Version="$(AzureIdentityVersion)" />
+  </ItemGroup>
+</Project>  

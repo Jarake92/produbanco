@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identidad-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: identidad-api
+  template:
+    metadata:
+      labels:
+        app: identidad-api
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: identidad-api
+        image: azdevacrakspoc.azurecr.io/demo-identidad:v5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 4431
+          name: http
+      hostAliases:
+        - ip: 127.0.0.1
+          hostnames:
+            - identidad.arquitectura.com

@@ -1,0 +1,17 @@
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/bin/Debug/net6.0/BFF.Identidad.Infraestructura.deps.json
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/bin/Debug/net6.0/BFF.Identidad.Infraestructura.dll
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/bin/Debug/net6.0/BFF.Identidad.Infraestructura.pdb
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/bin/Debug/net6.0/BFF.Identidad.Dominio.dll
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/bin/Debug/net6.0/Produnet.BFF.Middleware.dll
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/bin/Debug/net6.0/BFF.Identidad.Dominio.pdb
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.csproj.AssemblyReference.cache
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.AssemblyInfoInputs.cache
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.AssemblyInfo.cs
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.csproj.CoreCompileInputs.cache
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.dll
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/refint/BFF.Identidad.Infraestructura.dll
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.pdb
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/ref/BFF.Identidad.Infraestructura.dll
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Identidad.Infraestructura.sourcelink.json
+/Users/bolivararmijosg./Documents/git-hub/poc-aks/src/identidad/src/BFF.Identidad.Infraestructura/obj/Debug/net6.0/BFF.Iden.4566DC18.Up2Date

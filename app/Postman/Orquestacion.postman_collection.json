@@ -1,0 +1,809 @@
+{
+	"info": {
+		"_postman_id": "a25e288a-81d0-48bf-9bd6-d313ff4ef677",
+		"name": "Orquestacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29478597"
+	},
+	"item": [
+		{
+			"name": "Clientes API Health",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ClientesAPI}}/healthz",
+					"host": [
+						"{{ClientesAPI}}"
+					],
+					"path": [
+						"healthz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Direcciones API Health",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DireccionesAPI}}/healthz",
+					"host": [
+						"{{DireccionesAPI}}"
+					],
+					"path": [
+						"healthz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Telefonos API Health",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TelefonosAPI}}/healthz",
+					"host": [
+						"{{TelefonosAPI}}"
+					],
+					"path": [
+						"healthz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orquestador Get Health API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OrquestadorAPI}}/health-api",
+					"host": [
+						"{{OrquestadorAPI}}"
+					],
+					"path": [
+						"health-api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orquestador Get All Clientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OrquestadorAPI}}/api/v1/OrquestacionesCliente/",
+					"host": [
+						"{{OrquestadorAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"OrquestacionesCliente",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orquestador Get Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OrquestadorAPI}}/api/v1/OrquestacionesCliente/{{IdCliente}}",
+					"host": [
+						"{{OrquestadorAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"OrquestacionesCliente",
+						"{{IdCliente}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orquestador Crear Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pedro\",\r\n    \"lastName\": \"Perez\",\r\n    \"dateBirth\": \"1980-08-28T13:54:59.440Z\",\r\n    \"numero\": \"123456789\",\r\n    \"tipo\": 1,\r\n    \"operadora\": 1,\r\n    \"provincia\": \"lorem ipsum\",\r\n    \"canton\": \"lorem ipsum\",\r\n    \"callePrincipal\": \"lore ipsum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{OrquestadorAPI}}/api/v1/OrquestacionesCliente/",
+					"host": [
+						"{{OrquestadorAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"OrquestacionesCliente",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orquestador Delete Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{OrquestadorAPI}}/api/v1/OrquestacionesCliente/{{IdCliente}}",
+					"host": [
+						"{{OrquestadorAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"OrquestacionesCliente",
+						"{{IdCliente}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Clientes Get Clientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ClientesAPI}}/api/v1/clientes/",
+					"host": [
+						"{{ClientesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Clientes Get Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ClientesAPI}}/api/v1/clientes/{{IdCliente}}",
+					"host": [
+						"{{ClientesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"{{IdCliente}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Clientes Post Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan\",\r\n    \"LastName\": \"Doe\",\r\n    \"dateBirth\": \"1980-08-28T13:54:59.440Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ClientesAPI}}/api/v1/clientes",
+					"host": [
+						"{{ClientesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Clientes Put Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Modified\",\r\n    \"LastName\": \"Doe\",\r\n    \"dateBirth\": \"1980-08-28T13:54:59.440Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ClientesAPI}}/api/v1/clientes/{{IdCliente}}",
+					"host": [
+						"{{ClientesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"{{IdCliente}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Clientes Delete Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ClientesAPI}}/api/v1/clientes/{{IdCliente}}",
+					"host": [
+						"{{ClientesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"{{IdCliente}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Direcciones Get Direcciones",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DireccionesAPI}}/api/v1/direcciones/all",
+					"host": [
+						"{{DireccionesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"direcciones",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Direcciones Get Direccion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DireccionesAPI}}/api/v1/direcciones/{{IdDireccion}}",
+					"host": [
+						"{{DireccionesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"direcciones",
+						"{{IdDireccion}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Direcciones Post Direccion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provincia\": \"lorem\",\r\n    \"canton\": \"ipsum\",\r\n    \"callePrincipal\": \"dolor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DireccionesAPI}}/api/v1/direcciones",
+					"host": [
+						"{{DireccionesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"direcciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Direcciones Put Direccion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provincia\": \"Modified\",\r\n    \"canton\": \"ipsum\",\r\n    \"callePrincipal\": \"dolor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DireccionesAPI}}/api/v1/direcciones/{{IdDireccion}}",
+					"host": [
+						"{{DireccionesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"direcciones",
+						"{{IdDireccion}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Direcciones Put Direccion Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{DireccionesAPI}}/api/v1/direcciones/{{IdDireccion}}",
+					"host": [
+						"{{DireccionesAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"direcciones",
+						"{{IdDireccion}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Telefonos Get Telefonos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TelefonosAPI}}/api/v1/telefonos/all",
+					"host": [
+						"{{TelefonosAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"telefonos",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Telefonos Get Telefono",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TelefonosAPI}}/api/v1/telefonos/{{IdTelefono}}",
+					"host": [
+						"{{TelefonosAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"telefonos",
+						"{{IdTelefono}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Telefonos Post Telefono",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": \"123456789\",\r\n    \"tipo\": 1,\r\n    \"operadora\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TelefonosAPI}}/api/v1/telefonos",
+					"host": [
+						"{{TelefonosAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"telefonos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Telefonos Put Telefono",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": \"Modified\",\r\n    \"tipo\": 1,\r\n    \"operadora\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TelefonosAPI}}/api/v1/telefonos/{{IdTelefono}}",
+					"host": [
+						"{{TelefonosAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"telefonos",
+						"{{IdTelefono}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Telefonos Delete Telefono",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{TelefonosAPI}}/api/v1/telefonos/{{IdTelefono}}",
+					"host": [
+						"{{TelefonosAPI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"telefonos",
+						"{{IdTelefono}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "JwtToken",
+			"value": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.ERD8Oyt99mHuxA-VtYaRcb5sMy8CcC4HZna-MwW37YY6WFT-ME6hK5HYEC--6ySZ8El0FCuPwOhIAMFpfrP51R_nQa_hYuOG.LrjFRfa1LJlsaIZkVCxxTA.2yUq03qLlYYs49KoFeYGXD_lYuVSne1Olsn_UapZOsbcGGAnG9HycYlA1KZm62xVdR3784cg5mcmKNJP8mUrXDkr9OxkeRK3rDOOJC_l2oK1-ovWZ9daLRSKi56EhytfAxecIAmJKM9ZvYeBxXIvZbOEIsiwVrUZ1Cp8cwrLVOwa2KVF5Ndgk9qwvk91IGoqbpz500JIpF1BC5zUDNWg3hDJvyorcXorfGlj5qPHXQBH0DCrcVxxrwjva7nX_EMvG_PDQjcI6Mtv6dyw1TNA59YdAl_B5846h2UlBT-CTCejimVBC7VfCwExrO7dvTCpISMFph2nsOWffAOiC7NEBuSoiqmmIWCJ7CotflgXdmDwg_30A7D37Tpl6gHmfFJ8lkzpltgz2dQcnd3QOSeQGEeJxaIW5ckYdRlptFebVLtL2AgI9IcqYtiGs21qKG4AVyPCXfSC0-vE9i40K8zrGac22pOQR8nlBuHJSz36qCRfeidKt0eZf_b3MDirwJfn-RqigQR_Cwog1JPPBzI2hjfUwfFtinS1s8a5Faw7IOt1w_DQstdHE4H9N9VkOpAF__lBuuTstzQbvQFNn0UhpCy9sZDNWDSOOozH8f2ebx5PbZ0zRb6vZwdj4bVFzEtpk48c7VhyJTj419go3OlcOdT4WP_OwfAUV-gU_z_Rf1PAFI1zHIR1DyxfRLmb0L_XuF1XDaqyyJ-EEl5u0kHHt6RSr7Kp8-2a0DdZ1e43K-cYm9lI6mdlp5HIeHQmq14hn9m1L_AtyyEcHtE0qBdZrWZJNjG-EchLNvqxlh3ekiHLGUbq33ONBVoFUuDkpBGBHXMvSGqcnTuwXRUlFicDWIXob7d2id5yVWDpZjbySUeyDXU3YFFlmXM09ptfoLNJpcrpqgNBpwc1J0Fww2U1RoZQIst_ubw-M27z-JvbCsr1A9tjvFCY3EpQBEub25TfUYlkis8MaWdsAAcfz211F1jJQkA0Qcb7_MsWpFkKiAVs6-xMphtwYQ2rd-6Di1cpLZIO6KJcj3y91LinHvqxvaO2tiggXFddpV6xcss3_EB75cZLRJe1ks6GXn0CfMhuJ4PnwQTfew909cSPM5c4qETdHMAn72nMzbzBy9jyRqmiY04CouGPz2MhrOJPjmB8f-1676BCJcbyy6X2RN526IZ15FLo-SwCFlxbEwPNaTmn-eP5kdCF2nHtjNn2tUrM9ZH4NIkXXu0m7Ocoh2dazSyE_b3v_Ydht-IXCMubTLw.4rm6v2Qsve9V2l5UmPJj2qij4JfoTQyW6n415OYAbCE"
+		},
+		{
+			"key": "OrquestadorAPI",
+			"value": "https://localhost:7100",
+			"type": "string"
+		},
+		{
+			"key": "ClientesAPI",
+			"value": "https://localhost:7101",
+			"type": "string"
+		},
+		{
+			"key": "DireccionesAPI",
+			"value": "https://localhost:7102",
+			"type": "string"
+		},
+		{
+			"key": "TelefonosAPI",
+			"value": "https://localhost:7103",
+			"type": "string"
+		},
+		{
+			"key": "IdCliente",
+			"value": "a061c94f-7f22-4d82-b7bf-370e23dcb4fa",
+			"type": "string"
+		},
+		{
+			"key": "IdDireccion",
+			"value": "e7c266c2-25b1-4be9-96f4-266954a5a191",
+			"type": "string"
+		},
+		{
+			"key": "IdTelefono",
+			"value": "e7c266c2-25b1-4be9-96f4-266954a5a191",
+			"type": "string"
+		}
+	]
+}
